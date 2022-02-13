@@ -43,7 +43,6 @@ class App extends Component {
   }
 
   modalShow(item) {
-    console.log(item)
     this.setState({ targetItem: item });
     this.setState({ isModal: true });
   }

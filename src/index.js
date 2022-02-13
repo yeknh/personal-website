@@ -13,7 +13,6 @@ import Handmade from './projects/Handmade/index';
 import ScrollToTop from './components/ScrollToTop';
 
 const customizedhistory = createHashHistory({ basename: '/personal-website' });
-console.log(customizedhistory)
 
 ReactDOM.render(
   <HashRouter history={customizedhistory}>

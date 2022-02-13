@@ -5,9 +5,7 @@ const withMediaQuery = (queries = []) => Component => props => {
   const mediaProps = {}
   queries.forEach(q => {
     mediaProps[q[0]] = useMediaQuery(q[1])
-    console.log(q)
   })
-  console.log('mediaProps', mediaProps)
   return <Component {...mediaProps} {...props} />
 }
 
