@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
+import { HashRouter, Switch, Route } from 'react-router-dom';
+import { createHashHistory } from 'history';
 import ThemeProvider from '@mui/material/styles/ThemeProvider';
 import theme from './Lib/theme';
 import Layout from './components/layout';
@@ -12,8 +12,11 @@ import Handmade from './projects/Handmade/index';
 
 import ScrollToTop from './components/ScrollToTop';
 
+const customizedhistory = createHashHistory({ basename: '/personal-website' });
+console.log(customizedhistory)
+
 ReactDOM.render(
-  <BrowserRouter history={createBrowserHistory()} basename={process.env.PUBLIC_URL}>
+  <HashRouter history={customizedhistory}>
     <ScrollToTop>
       <ThemeProvider theme={theme}>
         <Switch>
@@ -24,6 +27,6 @@ ReactDOM.render(
         </Switch>
       </ThemeProvider>
     </ScrollToTop>
-  </BrowserRouter>,
+  </HashRouter>,
   document.getElementById('root')
 );
